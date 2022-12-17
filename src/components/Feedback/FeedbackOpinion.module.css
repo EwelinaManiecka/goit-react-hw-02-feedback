@@ -14,3 +14,16 @@
   margin: 10px;
   text-transform: uppercase;
 }
+
+button {
+  background-color: deepskyblue;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  height: 40px;
+}
+
+button:hover {
+  background-color: rgb(0, 97, 193);
+  color: white;
+}
