@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import css from './FeedbackOpinion.module.css';
 
 class FeedbackOpinions extends Component {
-  static defaultProps = {
-    options: [],
-  };
-  static propTypes = {
-    options: PropTypes.array.isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: [],
+    };
+  }
 
   render() {
     return (
@@ -32,5 +31,10 @@ class FeedbackOpinions extends Component {
     );
   }
 }
+
+FeedbackOpinions.propTypes = {
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 
 export default FeedbackOpinions;

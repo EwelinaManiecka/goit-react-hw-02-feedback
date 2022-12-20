@@ -27,23 +27,24 @@ class App extends Component {
     });
   };
 
-  countZero = () => {
-    if (
-      this.state.good === 0 &&
-      this.state.neutral === 0 &&
-      this.state.bad === 0
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  // countZero = () => {
+  //   if (
+  //     this.state.good === 0 &&
+  //     this.state.neutral === 0 &&
+  //     this.state.bad === 0
+  //   ) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // };
   countPositiveFeedbackPercentage = () => {
     return Math.trunc((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
     const btnNames = Object.keys(this.state);
+    const actualState = this.state;
     return (
       <div className="App">
         <section>
@@ -51,11 +52,11 @@ class App extends Component {
             options={btnNames}
             onLeaveFeedback={this.onLeaveFeedback}
           />
-          {this.countZero() ? (
+          {this.countTotalFeedback() === 0 ? (
             <Notification message="No feedback given" />
           ) : (
             <Statistics
-              stat={this.state}
+              options={actualState}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
