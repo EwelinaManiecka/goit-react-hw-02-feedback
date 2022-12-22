@@ -1,19 +1,18 @@
 import css from './Notification.module.css';
 import { Component } from 'react';
-
-const initialState = ``;
+import PropTypes from 'prop-types';
 
 class Notification extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      message: initialState,
-    };
   }
 
   render() {
     return <h2 className={css.notification}>{this.props.message}</h2>;
   }
 }
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 export default Notification;

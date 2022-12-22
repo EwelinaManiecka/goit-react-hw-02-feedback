@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 import css from './FeedbackOpinion.module.css';
 
 class FeedbackOpinions extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: [],
-    };
-  }
-
   render() {
     return (
       <div className={css.feedback}>

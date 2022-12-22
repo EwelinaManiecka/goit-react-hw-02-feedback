@@ -27,17 +27,6 @@ class App extends Component {
     });
   };
 
-  // countZero = () => {
-  //   if (
-  //     this.state.good === 0 &&
-  //     this.state.neutral === 0 &&
-  //     this.state.bad === 0
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
   countPositiveFeedbackPercentage = () => {
     return Math.trunc((this.state.good / this.countTotalFeedback()) * 100);
   };
