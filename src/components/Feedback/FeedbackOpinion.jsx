@@ -4,21 +4,24 @@ import css from './FeedbackOpinion.module.css';
 
 class FeedbackOpinions extends Component {
   render() {
+    const { options, onLeaveFeedback } = this.props;
     return (
       <div className={css.feedback}>
         <h1 className={css.feedback__title}>Please leave feedback</h1>
         <div className={css.feedback__buttons}>
-          {this.props.options.map(btn => (
-            <button
-              className={css.feedback__buttons}
-              value={btn}
-              key={btn}
-              type="button"
-              onClick={event => this.props.onLeaveFeedback(event)}
-            >
-              {btn}
-            </button>
-          ))}
+          {options.map(option => {
+            return (
+              <button
+                className={css.feedback__buttons}
+                value={option}
+                key={option}
+                type="button"
+                onClick={event => onLeaveFeedback(event)}
+              >
+                {option}
+              </button>
+            );
+          })}
         </div>
       </div>
     );
@@ -26,8 +29,8 @@ class FeedbackOpinions extends Component {
 }
 
 FeedbackOpinions.propTypes = {
-  options: PropTypes.array.isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  onLeaveFeedback: PropTypes.func,
 };
 
 export default FeedbackOpinions;

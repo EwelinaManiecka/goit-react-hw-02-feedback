@@ -3,10 +3,6 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Notification extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return <h2 className={css.notification}>{this.props.message}</h2>;
   }

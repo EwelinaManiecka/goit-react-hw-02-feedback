@@ -4,9 +4,7 @@ import { Component } from 'react';
 
 class Statistics extends Component {
   render() {
-    let total;
-    let positivePercentage;
-    const { options } = this.props;
+    const { options, total, positivePercentage } = this.props;
     return (
       <div className={css.statistics}>
         <h2 className={css.statistics__title}>Statistics</h2>
